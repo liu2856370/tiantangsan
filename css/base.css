@@ -1,0 +1,384 @@
+﻿/*页面初始化*/
+*{
+    margin:0px;
+    padding: 0px;
+    font-style: normal;
+    font-weight: normal;
+}
+body{
+    font-family: "微软雅黑";
+    font-size: 18px;
+    display: none;
+}
+.clear:after{
+    clear:both;
+    content:'';
+    display:block;
+    width: 0;
+    height: 0;
+    visibility:hidden;
+}
+img{
+    border: none;
+}
+input[type='button'],
+input[type='submit'],
+select{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+}
+input,select{
+    font-family: "微软雅黑";
+    border: 1px solid #ccc;
+    text-indent: 0.08rem;
+    color: #888;
+    font-size: 0.22rem;
+    outline: none;
+}
+select {
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+
+
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 0.14rem;
+}
+
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
+.wrap,.main,footer{
+    width: 100%;
+    overflow: hidden;
+}
+.wrap{
+    padding-bottom: 0.8rem;
+}
+ul li{
+    list-style: none;
+}
+select option{
+    font-size: 0.12rem;
+    color: #888;
+    text-indent: 0.08rem;
+    font-family: "微软雅黑";
+}
+.main{
+    padding-bottom: 0.15rem;
+}
+.wrap,main{
+    width: 100%;
+    overflow: hidden;
+}
+.Img_div,
+.Img_div>img{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.bottom{
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background: #ee3300;
+}
+.bottom>a{
+    display: block;
+    width:33.333333333%;
+    height: 0.8rem;
+    overflow: hidden;
+    float: left;
+    text-decoration: none;
+}
+.bottom>a>div{
+    width: 100%;
+    height: 0.60rem;
+    margin-top: 0.1rem;
+    overflow: hidden;
+    border-left: 2px solid #fff;
+    text-align: center;
+    line-height: 0.6rem;
+}
+.bottom>a:nth-child(1)>div{
+    border-left: none;
+}
+.bottom>a>div>img{
+    height: 0.40rem;
+    position: relative;
+    top: 0.04rem;
+}
+.bottom>a>div>span{
+    color: #fff;
+    font-size: 0.26rem;
+    margin-left: 0.1rem;
+}
+.right{
+    width: 1rem;
+    overflow: hidden;
+    position: fixed;
+    top:35%;
+    right: 0.1rem;
+}
+.right>div{
+    width: 100%;
+    height: 1rem;
+    overflow: hidden;
+    margin-top: 0.1rem;
+    border-radius: 50%;
+}
+.right>div>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+}
+.right>div>a>div{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top:0px;
+    z-index: 2;
+}
+.right>div>a>div>img{
+    height: 0.6rem;
+    display: block;
+    margin: 0.2rem auto 0px;
+}
+.right>div>a>span{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #000;
+    filter: alpha(opacity=50);
+    opacity:0.5;
+}
+.ewm{
+    width: 2rem;
+    overflow: hidden;
+    position: fixed;
+    right: 0.4rem;
+    top:50%;
+    display: none;
+    opacity: 0;
+    box-shadow: -0.01rem -0.01rem 0.1rem #000;
+}
+.ewm>img{
+    width: 2rem;
+    overflow: hidden;
+    display: block;
+}
+.scroll{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: 0.03px;
+    padding-top: 0.10rem;
+    background: #f0f0f2;
+}
+.outer{
+    width: 7.46rem;
+    height: 2.35rem;
+    overflow: hidden;
+    background: #fff;
+    border-radius:0.10rem;
+    margin: 0 auto;
+    padding-bottom: 0.15rem;
+    box-shadow: 0px 0px 0.05rem #dedede;
+}
+.inner{
+    width:7.42rem;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.inner>div{
+    width: 100%;
+    height: 0.58rem;
+    border-bottom: 1px solid #ededed;
+}
+.inner>div>div{
+    height: 100%;
+    line-height: 0.58rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    font-size: 0.22rem;
+    width: 14%;
+    color: #333;
+}
+.inner>div>div:nth-child(1){
+    width: 18%;
+}
+.inner>div>div:nth-child(3){
+    width:34%;
+}
+.inner>div>div:nth-child(5){
+    width: 20%;
+}
+.inner>div>div:nth-child(1),
+.inner>div>div:nth-child(4)>span {
+    color: #e84e40;
+}
+.pay{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0.20rem;
+    color: #333;
+}
+.pay>div{
+    width: 50%;
+    height: 0.30rem;
+    overflow: hidden;
+    float: left;
+    text-indent: 0.20rem;
+    line-height: 0.30rem;
+    font-size: 0.26rem;
+}
+.pays{
+    width: 100%;
+    height: 0.30rem;
+    margin-left: 0.20rem;
+    line-height: 0.30rem;
+    font-size: 0.30rem;
+    color: #000;
+    overflow: hidden;
+    margin-top: 0.20rem;
+}
+
+.pay>div>input{
+    width: 0.28rem;
+    height: 0.28rem;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-top: -0.02rem;
+}
+.pay>div>span{
+    margin-left:0.05rem;
+}
+.money{
+    width: 100%;
+    overflow: hidden;
+    height: 0.30rem;
+    font-size: 0.26rem;
+    color: #333;
+    text-indent: 0.20rem;
+    margin-top: 0.20rem;
+}
+.money>span{
+    color: #e84e40;
+    margin-left: 0.10rem;
+}
+.payFor{
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 0.20rem;
+}
+.payFor>a{
+    display: block;
+    width: 3.00rem;
+    margin: 0.20rem auto 0px;
+    height: 0.60rem;
+    text-align: center;
+    line-height:0.60rem;
+    background: #ee3300;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.28rem;
+    border-radius: 0.10rem;
+}
+.iframe{
+    width: 100%;
+    height: 1150px;
+    overflow: hidden;
+}
+.ewma{
+    display: none;
+}
+.ewm{
+    width: 2rem;
+    overflow: hidden;
+    position: fixed;
+    right: 0.4rem;
+    top:50%;
+    display: none;
+    opacity: 0;
+    box-shadow: -0.01rem -0.01rem 0.1rem #000;
+}
+.ewm>img{
+    width: 2rem;
+    overflow: hidden;
+    display: block;
+}
+.title{
+    width: 100%;
+    height: 0.60rem;
+    line-height: 0.6rem;
+    font-size: 0.24rem;
+    color: #6c594d;
+    text-indent: 0.25rem;
+    overflow: hidden;
+    background: #eee9e6;
+}
+.title>img{
+    width: 0.22rem;
+    margin-right: 0.15rem;
+    position: relative;
+    top:0.02rem;
+}
+.text{
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    width: 100%;
+    overflow: hidden;
+}
+.text>p{
+    margin-left: 0.15rem;
+    font-size: 0.26rem;
+    color: #333;
+    line-height: 0.4rem;
+}
+.text>p>span{
+    color: #ff6666;
+}
+.ms{
+    width: 100%;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    overflow: hidden;
+}
+.ms>p{
+    text-align: center;
+    font-size: 0.38rem;
+    line-height: 0.5rem;
+    color: #333;
+}
+.ms>p>span{
+    color: #000;
+    font-weight: bold;
+}
+.footer{
+    width:100%;
+    overflow: hidden;
+    padding-top: 0.15rem;
+    paddding-bottom:0.15rem;
+}
+.footer>p{
+    text-align: center;
+    line-height: 0.3rem;
+    font-size: 0.24rem;
+    color:#333;
+}
+.footer>p:nth-child(1){
+    color: #000;
+    font-size: 0.26rem;
+    margin-bottom: 0.1rem;
+}
+
